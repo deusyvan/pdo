@@ -1,9 +1,18 @@
 <?php
 
 $dsn = "mysql:dbname=blog;host=localhost";
+$dbuser = "admin";
+$dbpass = "admin";
 
-$dbuser = "root";
+//Iniciar o PDO:
 
-$dbpass = "root"
+try {
+    $pdo = new PDO($dsn, $dbuser, $dbpass);
+    echo "Conexão estabelecida com sucesso!";
+    
+} catch (PDOException $e) {
+    echo "Falhou a conexão com o banco: ".$e->getMessage();
+}
+
 
 ?>

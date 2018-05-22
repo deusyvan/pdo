@@ -9,21 +9,17 @@ $dbpass = "admin";
 try {
     $pdo = new PDO($dsn, $dbuser, $dbpass);
     
-    $sql = "SELECT * FROM usuarios WHERE email='algo@b7web.com.br'";
+    $nome = "Testador";
+    $email = "teste@hotmail.com";
+    $senha = md5("123");
     
-    //Reescrevendo a string com o pdo
-    $sql = $pdo->query($sql);
+    $sql = "INSERT INTO usuarios SET nome='$nome', email='$email', senha = '$senha'";
     
-    //Verificar se houve resultado:
-    if ($sql-> rowCount() > 0) {
+    $sql = $pdo->query($sql);//Retorna o id inserido.
+    
+    echo "Usuário inserido com sucesso!";
+   
         
-        foreach ($sql->fetchAll() as $usuario){
-            echo "Nome: ".$usuario["nome"]." - ".$usuario["email"]."<br>";
-        }
-        
-    } else {
-        echo "Não há usuários cadastrados";
-    }
     
 } catch (PDOException $e) {
     echo "Falhou a conexão com o banco: ".$e->getMessage();

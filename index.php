@@ -9,8 +9,10 @@ $dbpass = "admin";
 try {
     $pdo = new PDO($dsn, $dbuser, $dbpass);
     
-   $sql = "UPDATE usuarios SET email='abc@hotmail.com' WHERE email='suport@b7web.com.br'";
-   $sql = $pdo->query($sql);
+   $novasenha = md5("teste123");
+    
+   $sql = "UPDATE usuarios SET senha='$novasenha' WHERE id=1";
+   $pdo->query($sql);
    
    echo "Usuário alterado com sucesso!";
         

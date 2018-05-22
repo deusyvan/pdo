@@ -9,16 +9,10 @@ $dbpass = "admin";
 try {
     $pdo = new PDO($dsn, $dbuser, $dbpass);
     
-    $nome = "Testador 2";
-    $email = "teste2@hotmail.com";
-    $senha = md5("123");
-    
-    $sql = "INSERT INTO usuarios SET nome='$nome', email='$email', senha = '$senha'";
-    
-    $sql = $pdo->query($sql);//Retorna o id inserido.
-    
-    echo "Usuário inserido com sucesso! Id= ".$pdo->lastInsertId();
+   $sql = "UPDATE usuarios SET email='abc@hotmail.com' WHERE email='suport@b7web.com.br'";
+   $sql = $pdo->query($sql);
    
+   echo "Usuário alterado com sucesso!";
         
     
 } catch (PDOException $e) {

@@ -16,7 +16,10 @@ try {
     
     //Verificar se houve resultado:
     if ($sql-> rowCount() > 0) {
-        echo "Há usuários sim";
+        
+        foreach ($sql->fetchAll() as $usuario){
+            echo "Nome: ".$usuario["nome"]."<br>";
+        }
         
     } else {
         echo "Não há usuários cadastrados";

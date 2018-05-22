@@ -9,7 +9,7 @@ $dbpass = "admin";
 try {
     $pdo = new PDO($dsn, $dbuser, $dbpass);
     
-    $sql = "SELECT * FROM usuarios WHERE email='suport@b7web.com.br'";
+    $sql = "SELECT * FROM usuarios WHERE email='algo@b7web.com.br'";
     
     //Reescrevendo a string com o pdo
     $sql = $pdo->query($sql);

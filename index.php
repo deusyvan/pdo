@@ -18,7 +18,7 @@ try {
     if ($sql-> rowCount() > 0) {
         
         foreach ($sql->fetchAll() as $usuario){
-            echo "Nome: ".$usuario["nome"]."<br>";
+            echo "Nome: ".$usuario["nome"]." - ".$usuario["email"]."<br>";
         }
         
     } else {

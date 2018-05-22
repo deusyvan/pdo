@@ -9,12 +9,11 @@ $dbpass = "admin";
 try {
     $pdo = new PDO($dsn, $dbuser, $dbpass);
     
-   $novasenha = md5("teste123");
+    $sql = "DELETE FROM usuarios WHERE id = 6";
     
-   $sql = "UPDATE usuarios SET senha='$novasenha' WHERE id=1";
-   $pdo->query($sql);
-   
-   echo "Usuário alterado com sucesso!";
+    $pdo->query($sql);
+    
+    echo "Usuário deletado com sucesso!";
         
     
 } catch (PDOException $e) {
